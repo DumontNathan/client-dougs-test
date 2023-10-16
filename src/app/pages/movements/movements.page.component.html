@@ -1,0 +1,6 @@
+<app-movements
+  (jsonInputValue)="setJsonInputValue($event)"
+  (emitClickButton)="sendMovementsAndBalances()"
+  [movementsValidationData$]="movementsValidationData$"
+  [jsonFormatError$]="jsonFormatError$">
+</app-movements>

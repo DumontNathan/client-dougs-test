@@ -1,0 +1,41 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "WorkSans", sans-serif;
+  min-width: 240px;
+}
+
+input:focus {
+    outline: none;
+  }
+
+textarea {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 8px;
+    gap: 8px;
+    width: 100%;
+    min-width: 800px;
+    height: 500px;
+    border: 1px solid #e0e0e0;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #666666;
+  }
+
+textarea::placeholder {
+  font-style: italic;
+  color: grey;
+}

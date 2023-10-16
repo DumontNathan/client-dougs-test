@@ -1,0 +1,10 @@
+.message-panel-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 800px;
+  min-height: 100px;
+  color: white;
+}

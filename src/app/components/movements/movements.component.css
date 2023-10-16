@@ -1,0 +1,9 @@
+.movements-container {
+  margin-top: 100px;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

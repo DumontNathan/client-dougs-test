@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="movements-container">
+  <app-json-input (emitInputValue)="emitJsonInputValue($event)"
+                  placeHolder="{{ jsonInputPlaceHolder }}"></app-json-input>
+  <app-button label="{{ btnLabel }}" (emitClick)="emitClick($event)"></app-button>
+
+  <ng-container *ngIf="showJsonFormatError; else validationMessage">
+    <app-message-panel [typeMessage]="'error'"></app-message-panel>
+  </ng-container>
+
+  <ng-template #validationMessage>
+    <ng-container *ngIf="movementsValidationData$ | async as movementsValidationData">
+      <app-message-panel [validationData]="movementsValidationData"
+                         [typeMessage]="movementsValidationData.reasons ? 'warning' : 'success'"></app-message-panel>
+    </ng-container>
+  </ng-template>
+</div>
+
+

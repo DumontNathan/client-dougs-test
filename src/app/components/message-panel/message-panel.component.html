@@ -1,0 +1,43 @@
+<div class="message-panel-container"
+     [ngStyle]="{'background-color' : typeMessage === 'success' ? 'green' : typeMessage === 'error' ? 'red' : 'orange' }">
+  <div class="message-title" *ngIf="typeMessage === 'warning'">
+    <span>Opérations bancaires non synchronisées</span>
+  </div>
+  <div class="message-body">
+    <ng-container *ngIf="typeMessage === 'warning'; else simpleMessage">
+      <div *ngFor="let validationReason of validationData?.reasons">
+        <span class="reason-title"> {{validationReason.reason}} </span>
+        <div class="reason-list-container">
+          <ng-container *ngIf="validationReason.duplicates;">
+            <ul class="reason-list">
+              <li class="list-item" *ngFor="let movement of validationReason.duplicates">
+                <span class="list-element">Id : {{ movement.id }}, </span>
+                <span class="list-element">Date : {{ movement.date }}, </span>
+                <span class="list-element">Montant : {{ movement.amount }}, </span>
+                <span class="list-element">Libellé : {{ movement.label }}</span>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-container *ngIf="validationReason.missingMovements;">
+            <ul class="reason-list">
+              <li *ngFor="let missingMovement of validationReason.missingMovements">
+                <span class="list-element">Période : {{missingMovement.startDate}} - {{missingMovement.endDate}}</span>,
+                <span class="list-element">Total opérations réelles : {{ missingMovement.actualTotalMovement }}</span>,
+                <span
+                  class="list-element">Total opérations observées : {{ missingMovement.observedTotalMovement }}</span>,
+                <span
+                  class="list-element">Total opérations manquantes : {{ missingMovement.actualTotalMovement - missingMovement.observedTotalMovement }}</span>,
+              </li>
+            </ul>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+<ng-template #simpleMessage>
+  <span class="message-text" *ngIf="typeMessage === 'success'">Les opérations bancaires sont bien synchronisées !</span>
+  <span class="message-text" *ngIf="typeMessage === 'error'">Veuillez verifier le bon format de données</span>
+</ng-template>

@@ -1,0 +1,46 @@
+.btn-container {
+  margin-top: 24px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.btn-container button {
+
+  line-height: 27px !important;
+  height: 36px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0 !important;
+  border: 1px solid transparent;
+  min-width: 36px;
+  cursor: pointer;
+  background-color: #11ABEC;
+}
+
+.btn-container button:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-container button:active {
+  border: 1px solid black;
+}
+
+.btn-container button:focus {
+  outline: none !important;
+}
+
+.btn-container .btn-label {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+  padding: 0 16px;
+}
+
+
+
+
+
