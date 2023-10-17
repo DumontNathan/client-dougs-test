@@ -31,8 +31,14 @@ export class MovementsFacade {
         (movementsValidation: ValidationResponseDTO) => {
           this.movementsStore.setMovementsValidationData(movementsValidation)
         },
-        (errorResponse: {error : ValidationResponseDTO}) => {
-          this.movementsStore.setMovementsValidationData(errorResponse.error)
+        (errorResponse: {error : ValidationResponseDTO} | any) => {
+          console.log(errorResponse);
+          // Improvement => errors sent by nestJS validation are not correctly handled
+          if (errorResponse.status === 400) {
+            this.movementsStore.setJsonFormatError(true);
+          } else {
+            this.movementsStore.setMovementsValidationData(errorResponse.error)
+          }
         });
   }
 }

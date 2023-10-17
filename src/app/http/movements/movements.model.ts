@@ -12,6 +12,7 @@ export interface Reason {
   reason: string;
   duplicates?: Movement[];
   missingMovements?: MissingMovement[];
+  notInPeriod?: Movement[];
 }
 
 export interface MissingMovement {

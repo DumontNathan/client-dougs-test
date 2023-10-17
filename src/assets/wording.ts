@@ -15,5 +15,17 @@ export const WORDING: any = {
     '    ...\n' +
     '  ]\n' +
     '}',
-  buttonLabel : "Envoyer"
+  buttonLabel : "Envoyer",
+  missingOperationExplaination: 'Les opérations bancaires en dehors des périodes définies dans les relevés de compte doivent être retirées pour poursuivre la validation.',
+  warningTitle: 'Opérations bancaires non synchronisées',
+  successTitle: 'Les opérations bancaires sont bien synchronisées !',
+  errorTitle: 'Veuillez verifier le bon format de données',
+  id: 'ID',
+  date: 'Date',
+  montant: 'Montant',
+  libelle: 'Libellé',
+  periode: 'Période',
+  observedTotalMovement : 'Total opérations réelles',
+  actualTotalMovement: 'Total opérations observées',
+  totalMissingMovement: 'Total opérations manquantes'
 }

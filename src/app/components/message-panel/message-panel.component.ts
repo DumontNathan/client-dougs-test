@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ValidationResponseDTO} from "../../http/movements/movements.model";
+import {WORDING} from "../../../assets/wording";
 
 @Component({
   selector: 'app-message-panel',
@@ -14,4 +15,5 @@ export class MessagePanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  protected readonly WORDING = WORDING;
 }
