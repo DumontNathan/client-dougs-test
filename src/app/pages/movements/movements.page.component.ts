@@ -22,7 +22,7 @@ export class MovementsPageComponent implements OnChanges {
 
   }
 
-  setJsonInputValue(jsonInputValue: any) {
+  setJsonInputValue(jsonInputValue: string) {
     this.jsonInputValue = jsonInputValue;
   }
 
