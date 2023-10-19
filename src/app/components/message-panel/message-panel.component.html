@@ -32,7 +32,7 @@
           <ng-container *ngIf="validationReason.missingMovements;">
             <ul class="reason-list">
               <li *ngFor="let missingMovement of validationReason.missingMovements">
-                <span class="list-element">{{WORDING.period}} : {{missingMovement.startDate}} - {{missingMovement.endDate}}</span>,
+                <span class="list-element">{{WORDING.periode}} : {{missingMovement.startDate}} - {{missingMovement.endDate}}</span>,
                 <span class="list-element">{{WORDING.actualTotalMovement}} : {{ missingMovement.actualTotalMovement }}</span>,
                 <span
                   class="list-element">{{WORDING.observedTotalMovement}} : {{ missingMovement.observedTotalMovement }}</span>,
