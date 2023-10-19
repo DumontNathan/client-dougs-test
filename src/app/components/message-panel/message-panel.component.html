@@ -6,7 +6,7 @@
   <div class="message-body">
     <ng-container *ngIf="typeMessage === 'warning'; else simpleMessage">
       <div *ngFor="let validationReason of validationData?.reasons">
-        <span class="reason-title"> {{validationReason.reason}} :</span>
+        <span class="reason-title"> {{validationReason.reason}}</span>
         <div class="reason-list-container">
           <ng-container *ngIf="validationReason.duplicates;">
             <ul class="reason-list">

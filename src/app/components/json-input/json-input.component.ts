@@ -6,7 +6,7 @@ import {UntypedFormControl} from "@angular/forms";
   styleUrls: ['./json-input.component.css']
 })
 export class JsonInputComponent {
-  @Output() emitInputValue = new EventEmitter();
+  @Output() emitInputValue: EventEmitter<string> = new EventEmitter();
   @Input() placeHolder: string | undefined
   value: string | undefined;
 

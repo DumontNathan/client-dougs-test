@@ -25,7 +25,7 @@ export const WORDING: any = {
   montant: 'Montant',
   libelle: 'Libellé',
   periode: 'Période',
-  observedTotalMovement : 'Total opérations réelles',
-  actualTotalMovement: 'Total opérations observées',
+  actualTotalMovement : 'Total opérations réelles',
+  observedTotalMovement: 'Total opérations observées',
   totalMissingMovement: 'Total opérations manquantes'
 }

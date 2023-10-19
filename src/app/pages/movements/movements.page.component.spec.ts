@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovementsPageComponent } from './movements.page.component';
+import {MovementsFacade} from "../../facades/movements.facade";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('MovementsComponent', () => {
   let component: MovementsPageComponent;
@@ -8,7 +10,9 @@ describe('MovementsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovementsPageComponent ]
+      declarations: [ MovementsPageComponent ],
+      providers: [MovementsFacade],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });

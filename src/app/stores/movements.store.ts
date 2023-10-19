@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
+import {ValidationResponseDTO} from "../http/movements/movements.model";
 
 @Injectable({
   providedIn: "root",
@@ -7,19 +8,19 @@ import {BehaviorSubject} from "rxjs";
 export class MovementsStore {
 
   private movementsValidationDataSubject: BehaviorSubject<any> = new BehaviorSubject(null);
-  readonly movementsValidationData$ = this.movementsValidationDataSubject.asObservable();
+  readonly movementsValidationData$: Observable<ValidationResponseDTO> = this.movementsValidationDataSubject.asObservable();
 
   private jsonFormatErrorSubject: BehaviorSubject<any> = new BehaviorSubject(null);
-  readonly jsonFormatError$ = this.jsonFormatErrorSubject.asObservable();
+  readonly jsonFormatError$: Observable<boolean> = this.jsonFormatErrorSubject.asObservable();
 
   constructor() {
   }
 
-  setMovementsValidationData(data: any): void {
+  setMovementsValidationData(data: ValidationResponseDTO): void {
     this.movementsValidationDataSubject.next(data);
   }
 
-  setJsonFormatError(data: any): void {
+  setJsonFormatError(data: boolean): void {
     this.jsonFormatErrorSubject.next(data);
   }
 }

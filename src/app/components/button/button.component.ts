@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
-  @Output() emitClick = new EventEmitter();
+  @Output() emitClick:EventEmitter<boolean> = new EventEmitter();
   @Input() label: string = '';
 
   constructor() { }
